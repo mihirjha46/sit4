@@ -1,0 +1,40 @@
+[System]
+Name='Chanthini_3033'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Food'
+Range=[0 10]
+NumMFs=2
+MF1='Rancid':'trimf',[-4 0 4]
+MF2='Excellent':'trimf',[6 10 14]
+
+[Input2]
+Name='Service'
+Range=[0 10]
+NumMFs=3
+MF1='Poor':'trimf',[-4 0 4]
+MF2='Good':'trimf',[1 5 9]
+MF3='Excellent':'trimf',[6 10 14]
+
+[Output1]
+Name='Tip'
+Range=[0 30]
+NumMFs=3
+MF1='Cheap':'trimf',[-12 0 12]
+MF2='Average':'trimf',[3 15 27]
+MF3='Generous':'trimf',[18 30 42]
+
+[Rules]
+1 1, 1 (1) : 2
+0 2, 2 (1) : 2
+2 3, 3 (1) : 2
